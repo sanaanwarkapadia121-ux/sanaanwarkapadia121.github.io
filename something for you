@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For You 💕</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: pink;
+      text-align: center;
+      padding-top: 80px;
+    }
+    button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 20px;
+      background: hotpink;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Hi 💖</h1>
+<p>Do you love me?</p>
+
+<button onclick="yes()">Yes 💕</button>
+<button onclick="alert('Wrong answer 😤')">No 😒</button>
+
+<script>
+function yes() {
+  document.body.innerHTML = "<h1>I knew it 😭💗</h1><p>You’re my favorite person ♾️</p>";
+}
+</script>
+
+</body>
+</html>
