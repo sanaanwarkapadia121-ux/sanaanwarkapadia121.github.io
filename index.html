@@ -1,39 +1,75 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>For You 💕</title>
-  <style>
-    body {
-      font-family: Arial;
-      background: pink;
-      text-align: center;
-      padding-top: 80px;
-    }
-    button {
-      padding: 12px 20px;
-      border: none;
-      border-radius: 20px;
-      background: hotpink;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      margin: 10px;
-    }
-  </style>
+    <style>
+        body {
+            background-color: #ffe4e1; /* Soft Rose Background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+        }
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 10px 20px rgba(255, 105, 180, 0.2);
+            border: 4px solid #ffb6c1;
+            max-width: 400px;
+        }
+        h2 { color: #ff69b4; }
+        .btn {
+            background: #ffb6c1;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px;
+            transition: 0.3s;
+        }
+        .btn:hover { background: #ff69b4; transform: scale(1.1); }
+        .hidden { display: none; }
+        #note { color: #d63384; font-style: italic; line-height: 1.6; }
+    </style>
 </head>
 <body>
 
-<h1>Hi 💖</h1>
-<p>Do you love me?</p>
+    <div class="card">
+        <div id="q1">
+            <h2>Choose the correct answer for a surprise... ✨</h2>
+            <p>What is 1 + 1?</p>
+            <button class="btn" onclick="alert('Try again! Think about us ❤️')">2</button>
+            <button class="btn" onclick="next(1, 2)">11 (You & Me)</button>
+        </div>
 
-<button onclick="yes()">Yes 💕</button>
-<button onclick="alert('Wrong answer 😤')">No 😒</button>
+        <div id="q2" class="hidden">
+            <h2>Do you love me? ❤️</h2>
+            <p>(Serious question!)</p>
+            <button class="btn" onclick="next(2, 3)">Yes!</button>
+        </div>
 
-<script>
-function yes() {
-  document.body.innerHTML = "<h1>I knew it 😭💗</h1><p>You’re my favorite person ♾️</p>";
-}
-</script>
+        <div id="q3" class="hidden">
+            <h2>For You... 💌</h2>
+            <div id="note">
+                "Hello there, this is a very special note to someone I miss and crave more than anything. 
+                Always remember that I am right here with you through your highs and your lows; 
+                you are never alone and I love you lots love."
+            </div>
+            <p>🌸✨🌸</p>
+        </div>
+    </div>
 
+    <script>
+        function next(hideNum, showNum) {
+            document.getElementById('q' + hideNum).classList.add('hidden');
+            document.getElementById('q' + showNum).classList.remove('hidden');
+        }
+    </script>
 </body>
 </html>
